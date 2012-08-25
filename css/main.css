@@ -1,0 +1,176 @@
+/* 
+    Document   : main
+    Created on : 24.08.2012, 17:36:06
+    Author     : kay
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@font-face {
+    font-family: 'Electrolize';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Electrolize'), local('Electrolize-Regular'), url(http://themes.googleusercontent.com/static/fonts/electrolize/v2/DDy9sgU2U7S4xAwH5thnJ4bN6UDyHWBl620a-IRfuBk.woff) format('woff');
+}
+
+root { 
+    display: block;
+}
+
+
+body {
+    background-color: #87cfe6;
+    color:white;
+    font-family: 'Electrolize', 'Arial';
+}
+
+h2  {
+    text-transform: uppercase;
+}
+
+a:link, a:active, a:visited {
+    text-decoration:none;
+    color:black;
+}
+
+.left {
+    float:left;
+}
+
+.pageLeft {
+    width: 280px;
+    padding: 25px;
+    
+}
+
+.pageheader {
+    padding:25px;
+    background-color: black;
+    position: fixed;
+    top:0px;
+    left:10px;
+    
+    z-index:2000;
+}
+
+.menueList {
+    padding:0px;
+}
+
+.menue {
+    display: inline;
+    width:200px;
+    background:transparent;
+    z-index:2000;
+    position:fixed;
+    left:10px;
+    top:100px;
+}
+
+.menueItem>a {
+    display:block;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.menueItem {
+    
+    list-style: none;
+    background-color: white;
+    
+    margin-top: 25px;
+}
+
+.menueItem:hover {
+    background-color: #808264;
+}
+
+
+
+.content {
+    right: 40px;
+    left: 108px;
+    top: 10px;
+    position: absolute;
+    padding-bottom: 30px;
+ 
+    width:400px;
+    margin-top:50px;
+    margin-left:300px;
+}
+
+.content h2{
+    font-size: 110px;
+    padding: 10px 0px 20px 0px;
+    margin-top: 52px;
+    color: #fff;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0px 1px 1px rgba(0,0,0,0.3);
+}
+
+
+.content p {
+    background:black;
+    color:white;
+    padding:10px;
+    display: inline-block;
+}
+
+
+/**
+*
+* part of css transitions
+
+**/
+
+@-webkit-keyframes slideOut{
+    0%{top:-30px; opacity: 0;}
+100%{top:0px; opacity: 1;}
+}
+@-moz-keyframes slideOut{
+    0%{top:-30px; opacity: 0;}
+100%{top:0px; opacity: 1;}
+}
+@-o-keyframes slideOut{
+    0%{top:-30px; opacity: 0;}
+100%{top:0px; opacity: 1;}
+}
+@-ms-keyframes slideOut{
+    0%{top:-30px; opacity: 0;}
+100%{top:0px; opacity: 1;}
+}
+
+@keyframes slideOut{
+    0%{top:-30px; opacity: 0;}
+100%{top:0px; opacity: 1;}
+}
+
+.panel{
+    min-width: 100%;
+    height: 98%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    margin-top: -150%;
+    background-color: #000;
+    box-shadow: 0px 4px 7px rgba(0,0,0,0.6);
+    opacity: 0;
+    z-index:2;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition:all .8s ease-in;
+    -o-transition: all .8s ease-in-out;
+    -ms-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+}
+.panel:target{
+    opacity: 1;
+    margin-top: 0%;
+    background-color: #87cfe6;
+}
+
+#home:target ~   #navHome,
+#imprint:target ~ .menue .menueList #navImprint,
+#about:target ~ #header #navigation #link-about {
+	background: #000;
+	color: #fff;
+}
+
